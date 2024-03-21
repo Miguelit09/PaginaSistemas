@@ -1,0 +1,33 @@
+{% extends "layouts/app.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>Index / Inicio</title>
+{% endblock title %}
+
+{% block content %}
+<section class="section_index">
+    <div class="container index">
+        <a href="#" class="card__index">
+            <figure>
+                <img src="{% static "images/dictionary.png" %}" alt="Dictionary/Diccionario" class="image__index">
+                <figcaption>
+                    <h2>Search by names / Búsqueda por nombres</h2>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="#" class="card__index">
+            <figure>
+                <img src="{% static "images/gallery.png" %}" alt="Gallery/Galería" class="image__index">
+                <figcaption>
+                    <h2>Search by images / Búsqueda por imágenes</h2>
+                </figcaption>
+            </figure>
+        </a>
+
+
+
+    </div>
+</section>
+{% endblock content %}
