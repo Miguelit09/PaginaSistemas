@@ -1,11 +1,21 @@
+/* Variables */
+
 :root {
     --white: #d4f0fc;
-    --sky-blue: #89d6fb;
-    --light-blue: #02a9f7;
-    --blue: #02577a;
-    --dark-blue: #01303f;
-    --header-height: 80px
+    --black: #06161d;
+    --sky-blue: rgb(94, 228, 235);
+    --light-blue: rgb(61, 177, 202);
+    --blue: rgb(28, 122, 186);
+    --dark-blue: rgb(1, 75, 174);
+    --background-page: linear-gradient(to left, rgb(1, 75, 174), rgb(79, 206, 213));
+    --header-height: 80px;
+    --english-title-font-size: 28px;
+    --english-font-size: 20px;
+    --spanish-title-font-size: 20px;
+    --spanish-font-size: 16px;
 }
+
+/* Formatear estilos */
 
 * {
     margin: 0;
@@ -13,8 +23,47 @@
     box-sizing: border-box;
     font-family: "Inder", sans-serif;
 }
+
+/* Helpers */
+.black_letter {
+    color:var(--black)
+}
+
+.white_letter {
+    color: var(--white)
+}
+.sky_blue_letter {
+    color: var(--sky-blue)
+}
+
+.dark_blue_letter {
+    color: var(--dark-blue)
+}
+
+.english_title_font_size {
+    font-size: var(--english-title-font-size);
+    font-weight: 900;
+}
+.english_font_size {
+    font-size: var(--english-font-size);
+}
+
+.spanish_title_font_size {
+    font-size: var(--spanish-title-font-size);
+    font-weight: 900;
+}
+
+.spanish_font_size {
+    font-size: var(--spanish-font-size)
+}
+
+/* Header */
 header {
-    background-color: var(--dark-blue);
+    background: var(--background-page);
+}
+
+body {
+    background: var(--background-page);
 }
 
 .container {
@@ -53,9 +102,14 @@ header {
     border-radius: 16px;
 }
 
+/* Index */
+
 .section_index {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height));
+    margin-top: 18px;
 }
 
 .index {
@@ -69,10 +123,92 @@ header {
     height: 360px;
 }
 
-.sky_blue_letter {
-    color: var(--sky-blue)
+
+
+.index__cards-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-top: 18px;
 }
 
-.dark_blue_letter {
-    color: var(--dark-blue)
+
+.index__card-image {
+    max-width: 100%;
+    height: 192px;
+    border: 2px solid var(--white);
+    border-radius: 8px;
+}
+
+
+.index__card {
+    width: 340px;
+    height: auto;
+    text-decoration: none;
+    padding: 24px;
+    text-align: center;
+    border: 3px solid var(--white);
+    border-radius: 8px;
+}
+
+.index__card:hover {
+    transform: scale(1.1);
+}
+
+/* Item */
+
+.section_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - var(--header-height));
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    margin: 24px;
+    text-align: center;
+    border: 3px solid var(--white);
+    width: 80%;
+    border-radius: 8px;
+    padding: 24px;
+    gap: 2rem;
+}
+
+.card-item__image-container {
+    width: 40%;
+}
+
+.card-item__image {
+    border: 3px solid var(--white);
+    width: 360px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-item__info {
+    border: 3px solid var(--white);
+    width: 30%;
+    border-radius: 8px;
+}
+
+.button {
+    text-align: center;
+    border: 2px solid var(--dark-blue);
+    border-radius: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: var(--blue);
+}
+
+.button:active {
+    background-color: var(--sky-blue);
+    color: var(--dark-blue);
 }
