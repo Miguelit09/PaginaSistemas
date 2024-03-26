@@ -3,66 +3,27 @@
 {% load static %}
 
 {% block title %}
-<title>Index / Inicio</title>
+<title>Homepage / Inicio</title>
 {% endblock title %}
 
 {% block content %}
 <section class="section_index">
-    <h3 class="english_font_size white_letter">Select the card to see more information</h3>
-    <h4 class="spanish_font_size black_letter">(Selecciona la tarjeta para ver más información)</h4>
     <div class="container index">
-        <div class="index__cards-block">
-            <a href="{% url 'item' %}" class="index__card">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="index__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-            <a href="{% url 'item' %}" class="index__card">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="index__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-            <a href="{% url 'item' %}" class="index__card">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="index__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-
-        <!-- <a href="#" class="card__index">
+        <div class="index__logo-container">
             <figure>
-                <img src="{% static "images/dictionary.png" %}" alt="Dictionary/Diccionario" class="image__index">
-                <figcaption>
-                    <h2>Search by names / Búsqueda por nombres</h2>
-                </figcaption>
+                <img src="{% static "images/logo.png" %}" alt="logo Systematic" class="index__logo">
             </figure>
-        </a>
-        <a href="#" class="card__index">
-            <figure>
-                <img src="{% static "images/gallery.png" %}" alt="Gallery/Galería" class="image__index">
-                <figcaption>
-                    <h2>Search by images / Búsqueda por imágenes</h2>
-                </figcaption>
-            </figure>
-        </a> -->
-        </div>  
+        </div>
+        <div class="index__buttons-container">
+            <a href="{% url "library" %}" class="button">
+                <p class="english_title_font_size">Go to the library</p>
+                <p class="spanish_title_font_size">(Ir a la biblioteca)</p>
+            </a>
+            <a href="{% url "seeker" %}" class="button">
+                <p class="english_title_font_size">Go to search box</p>
+                <p class="spanish_title_font_size">(Ir al cuadro de búsqueda)</p>
+            </a>
+        </div> 
     </div>
 </section>
 {% endblock content %}

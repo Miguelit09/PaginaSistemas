@@ -8,7 +8,7 @@
     --blue: rgb(28, 122, 186);
     --dark-blue: rgb(1, 75, 174);
     --background-page: linear-gradient(to left, rgb(1, 75, 174), rgb(79, 206, 213));
-    --header-height: 80px;
+    --header-height: 100px;
     --english-title-font-size: 28px;
     --english-font-size: 20px;
     --spanish-title-font-size: 20px;
@@ -72,10 +72,17 @@ body {
     padding: 0 12px;
 }
 
+
 .menu {
-    display: flex;  
-    gap: 4rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
     list-style: none;
+    align-items: center;
+}
+
+.header__logo {
+    width: 80px;
 }
 
 .header__text {
@@ -89,7 +96,11 @@ body {
     justify-content: space-around;
     align-items: center;
     height: var(--header-height);
-    padding: 8px;
+}
+
+.menu__button-container {
+    width: auto;
+    display: flex;
 }
 
 .menu__link {
@@ -102,9 +113,28 @@ body {
     border-radius: 16px;
 }
 
-/* Index */
+/* index */
 
-.section_index {
+.index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.index__logo, .seeker__logo {
+    width: 360px;
+}
+
+.index__buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+/* library */
+
+.section_library, .section_index, .section_seeker {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -112,20 +142,20 @@ body {
     margin-top: 18px;
 }
 
-.index {
+.library {
     display: flex;
     align-items: center;
     gap: 8rem;
 }
 
-.image__index {
+.image__library {
     width: 360px;
     height: 360px;
 }
 
 
 
-.index__cards-block {
+.library__cards-block {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -134,7 +164,7 @@ body {
 }
 
 
-.index__card-image {
+.library__card-image {
     max-width: 100%;
     height: 192px;
     border: 2px solid var(--white);
@@ -142,7 +172,7 @@ body {
 }
 
 
-.index__card {
+.library__card {
     width: 340px;
     height: auto;
     text-decoration: none;
@@ -152,7 +182,7 @@ body {
     border-radius: 8px;
 }
 
-.index__card:hover {
+.library__card:hover {
     transform: scale(1.1);
 }
 
@@ -195,8 +225,10 @@ body {
 }
 
 .button {
+    width: auto;
+    height: auto;
     text-align: center;
-    border: 2px solid var(--dark-blue);
+    border: 2px solid var(--white);
     border-radius: 8px;
     padding: 12px 24px;
     text-decoration: none;
@@ -205,10 +237,109 @@ body {
 
 .button:hover {
     transform: scale(1.1);
-    background-color: var(--blue);
+    background-color: var(--light-blue);
+    font-weight: 600;
 }
 
 .button:active {
     background-color: var(--sky-blue);
     color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    font-weight: 600;
+}
+
+
+/* seeker */
+
+.seeker__logo {
+    width: 360px;
+}
+
+.seeker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8rem;
+}
+
+.seeker__form {
+    text-align: center;
+}
+
+.seeker__search-language-options, .seeker__search-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+.seeker__language-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.seeker__english-radio-button, .seeker__spanish-radio-button {
+    display: inline-block;
+    padding: 8px 16px;
+    width: 50%;
+    cursor: pointer;
+}
+
+.seeker__english-radio-button {
+    border: 2px solid var(--black);
+    border-radius: 8px;
+}
+
+
+
+.seeker__spanish-radio-button {
+    border: 2px solid var(--white);
+    border-radius: 8px;
+}
+
+input[type="radio"]:checked + .seeker__english-radio-button, input[type="radio"]:checked + .seeker__spanish-radio-button {
+    background-color: var(--light-blue);
+}
+
+.seeker__search-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.search-entry, .search-button {
+    border: 2px solid var(--black);
+    padding: 4px 12px;
+    background-color: var(--sky-blue);
+    border-radius: 8px;
+    color: var(--dark-blue);
+    font-weight: 900;
+    width: 80%;
+}
+
+.search-button {
+    color: var(--black);
+    width: 20%;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.search-button:active {
+    background-color: var(--light-blue);
+}
+
+.bi-search {
+    font-size: 24px;
 }
