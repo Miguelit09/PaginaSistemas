@@ -6,9 +6,11 @@
 <title>Homepage / Inicio</title>
 {% endblock title %}
 
+
 {% block content %}
-<section class="section_index">
-    <div class="container index">
+
+<div class="container index">
+    <section class="section_index">
         <div class="index__logo-container">
             <figure>
                 <img src="{% static "images/logo.png" %}" alt="logo Systematic" class="index__logo">
@@ -19,11 +21,9 @@
                 <p class="english_title_font_size">Go to the library</p>
                 <p class="spanish_title_font_size">(Ir a la biblioteca)</p>
             </a>
-            <a href="{% url "seeker" %}" class="button">
-                <p class="english_title_font_size">Go to search box</p>
-                <p class="spanish_title_font_size">(Ir al cuadro de búsqueda)</p>
-            </a>
         </div> 
-    </div>
-</section>
+    </section>
+</div>
+
+
 {% endblock content %}

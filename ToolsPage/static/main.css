@@ -64,11 +64,12 @@ header {
 
 body {
     background: var(--background-page);
+    height: 100vh;
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1500px;
+    margin: 0 auto;
     padding: 0 12px;
 }
 
@@ -96,11 +97,13 @@ body {
     justify-content: space-around;
     align-items: center;
     height: var(--header-height);
+    margin-left: 128px;
 }
 
 .menu__button-container {
     width: auto;
     display: flex;
+    justify-content: center;
 }
 
 .menu__link {
@@ -115,21 +118,8 @@ body {
 
 /* index */
 
-.index {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.index__logo, .seeker__logo {
-    width: 360px;
-}
-
 .index__buttons-container {
     display: flex;
-    flex-direction: row;
-    gap: 4rem;
 }
 
 /* library */
@@ -144,8 +134,9 @@ body {
 
 .library {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8rem;
+    gap: 1rem;
 }
 
 .image__library {
@@ -188,11 +179,10 @@ body {
 
 /* Item */
 
-.section_item {
+.container_item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - var(--header-height));
 }
 
 .card-item {
@@ -201,10 +191,10 @@ body {
     margin: 24px;
     text-align: center;
     border: 3px solid var(--white);
-    width: 80%;
     border-radius: 8px;
     padding: 24px;
     gap: 2rem;
+    width: 1000px;
 }
 
 .card-item__image-container {
@@ -225,6 +215,7 @@ body {
 }
 
 .button {
+    max-width: 360px;
     width: auto;
     height: auto;
     text-align: center;
@@ -342,4 +333,59 @@ input[type="radio"]:checked + .seeker__english-radio-button, input[type="radio"]
 
 .bi-search {
     font-size: 24px;
+}
+
+/*Modals styles*/
+
+.modal {
+    display: none; /* Ocultar la ventana emergente por defecto */
+    position: fixed; /* Posición fija en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%; /* Tamaño completo de la ventana */
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Fondo semitransparente */
+    z-index: 1; /* Superponer sobre otros elementos */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: var(--background-page); /* Color de fondo de la ventana emergente */
+    margin: 7% auto; /* Centrar verticalmente y ajustar los márgenes */
+    padding: 20px;
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    width: 80%; /* Ancho de la ventana emergente */
+}
+
+.modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28px;
+    height: 40px;
+    padding: 0 76px;
+}
+
+.div-close {
+    display: flex;
+    justify-content: end;
+}
+
+.close {
+    display: flex;
+    width: 12px;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.4);
+    color: #000;
+}
+
+.modal__item {
+    margin: 2% auto;
+    width: 90%;
 }

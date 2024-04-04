@@ -1,13 +1,8 @@
-{% extends "layouts/app.html" %}
+
 
 {% load static %}
 
-{% block title %}
-<title>NameItem / NombreObjeto</title>
-{% endblock title %}
-
-{% block content %}
-<section class="section_item">
+<div class="container container_item">
     <div class="container card-item">
         <div class="card-item__image-container">
             <figure>
@@ -23,9 +18,9 @@
             <p class="english_font_size black_letter">Información del artículo</p>
         </div>
     </div>
-    <a href="{% url "library" %}" class="button">
-        <p>Return to the library</p>
-        <p>(Regresar a la biblioteca)</p>
+    <a href="#" id="button_close_modal_item" class="button">
+        <p>Close window</p>
+        <p>(Cerrar ventana)</p>
     </a>
-</section>
-{% endblock content %}
+    
+</div>

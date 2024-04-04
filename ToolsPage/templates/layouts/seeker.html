@@ -1,0 +1,40 @@
+{% load static %}
+
+<div class="container seeker">
+    <div class="seeker__logo-container">
+        <figure>
+            <img src="{% static "images/logo.png" %}" alt="logo Systematic" class="seeker__logo">
+        </figure>
+    </div>
+    <div class="seeker__form">
+        <form action="">
+            <div class="seeker__search-language-options">
+                <div class="seeker__info">
+                    <p class="english_title_font_size white_letter">Select search language</p>
+                    <p class="spanish_title_font_size black_letter">(Seleccione el idioma de búsqueda)</p>
+                </div>
+                <div class="seeker__language-options">
+                    <input type="radio" name="search-language" value="english" id="english">
+                    <label class="seeker__english-radio-button english_font_size white_letter" for="english">
+                        English
+                    </label>
+                    <input type="radio" name="search-language" value="español" id="spanish">
+                    <label class="seeker__spanish-radio-button english_font_size black_letter" for="spanish">
+                        Español
+                    </label>
+                </div>
+            </div>
+            <div class="seeker__search-entry">
+                <div class="seeker__info">
+                    <p class="english_title_font_size white_letter">Enter the tool name</p>
+                    <p class="spanish_title_font_size black_letter">(Ingrese el nombre de la herramienta)</p>
+                </div>
+                <div class="seeker__search-div">
+                    <input type="text" name="search-entry" class="search-entry">
+                    <button type="submit" class="search-button"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

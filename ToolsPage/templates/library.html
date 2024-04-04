@@ -6,62 +6,55 @@
 <title>Library / Biblioteca</title>
 {% endblock title %}
 
-{% block content %}
-<section class="section_library">
-    <h3 class="english_font_size white_letter">Select the card to see more information</h3>
-    <h4 class="spanish_font_size black_letter">(Selecciona la tarjeta para ver más información)</h4>
-    <div class="container library">
-        <div class="library__cards-block">
-            <a href="{% url 'item' %}" class="library__card">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-            <a href="{% url 'item' %}" class="library__card">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-            <a href="{% url 'item' %}" class="library__card">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
+{% block script %}
+<script src="{% static 'main.js' %}" defer></script>
+{% endblock script %}
 
-        <!-- <a href="#" class="card__index">
-            <figure>
-                <img src="{% static "images/dictionary.png" %}" alt="Dictionary/Diccionario" class="image__index">
-                <figcaption>
-                    <h2>Search by names / Búsqueda por nombres</h2>
-                </figcaption>
-            </figure>
-        </a>
-        <a href="#" class="card__index">
-            <figure>
-                <img src="{% static "images/gallery.png" %}" alt="Gallery/Galería" class="image__index">
-                <figcaption>
-                    <h2>Search by images / Búsqueda por imágenes</h2>
-                </figcaption>
-            </figure>
-        </a> -->
+{% block header %}
+{% include "layouts/partials/header.html" %}
+{% endblock header %}
+
+{% block content %}
+{% include "layouts/modals/modal_seeker.html" %}
+{% include "layouts/modals/modal_item.html" %}
+<section class="section_library">
+    <div class="container library">
+        <h3 class="english_font_size white_letter">Select the card to see more information</h3>
+        <h4 class="spanish_font_size black_letter">(Selecciona la tarjeta para ver más información)</h4>
+        <div class="library__cards-block">
+            <a href="#" class="library__card button_item">
+                <figure>
+                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
+                    <figcaption>
+                        <h3 class="english_title_font_size white_letter" >English</h3>
+                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
+                        <p class="english_font_size white_letter">Short description</p>
+                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="#" class="library__card button_item">
+                <figure>
+                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
+                    <figcaption>
+                        <h3 class="english_title_font_size white_letter" >English</h3>
+                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
+                        <p class="english_font_size white_letter">Short description</p>
+                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="#" class="library__card button_item">
+                <figure>
+                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
+                    <figcaption>
+                        <h3 class="english_title_font_size white_letter" >English</h3>
+                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
+                        <p class="english_font_size white_letter">Short description</p>
+                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
+                    </figcaption>
+                </figure>
+            </a>
         </div>  
     </div>
 </section>
