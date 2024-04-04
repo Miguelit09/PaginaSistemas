@@ -14,48 +14,36 @@
 {% include "layouts/partials/header.html" %}
 {% endblock header %}
 
-{% block content %}
-{% include "layouts/modals/modal_seeker.html" %}
-{% include "layouts/modals/modal_item.html" %}
-<section class="section_library">
-    <div class="container library">
-        <h3 class="english_font_size white_letter">Select the card to see more information</h3>
-        <h4 class="spanish_font_size black_letter">(Selecciona la tarjeta para ver más información)</h4>
-        <div class="library__cards-block">
-            <a href="#" class="library__card button_item">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-            <a href="#" class="library__card button_item">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-            <a href="#" class="library__card button_item">
-                <figure>
-                    <img src="{% static "images/dictionary.png" %}" alt="" class="library__card-image">
-                    <figcaption>
-                        <h3 class="english_title_font_size white_letter" >English</h3>
-                        <h4 class="spanish_title_font_size black_letter">(Español)</h4>
-                        <p class="english_font_size white_letter">Short description</p>
-                        <p class="spanish_font_size black_letter">(Descripción corta)</p>
-                    </figcaption>
-                </figure>
-            </a>
-        </div>  
-    </div>
-</section>
-{% endblock content %}
+{% block body %}
+<body class="body_library">
+    {% include "layouts/partials/header.html" %}
+    {% include "layouts/modals/modal_seeker.html" %}
+    {% include "layouts/modals/modal_item.html" %}
+    {% if no_matches %}
+    {% include "layouts/modals/modal_no_matches.html" %}
+    {% endif %}
+    <main>
+        <section class="section_library">
+            <div class="container library">
+                <h3 class="english_font_size white_letter">Select the card to see more information</h3>
+                <h4 class="spanish_font_size black_letter">(Selecciona la tarjeta para ver más información)</h4>
+                <div class="library__cards-block">
+                    {% for tool in tools %}
+                    <a href="#" data-id={{ tool.id }} class="library__card button_item">
+                        <figure>
+                            <img src= "{% static 'images/' %}{{ tool.tool_image }}" alt="{{ tool.english_name }}" class="library__card-image">
+                            <figcaption>
+                                <h3 class="english_title_font_size white_letter" >{{ tool.english_name }}</h3>
+                                <h4 class="spanish_title_font_size black_letter">({{ tool.spanish_name }})</h4>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    {% endfor %}
+                    
+                </div>  
+            </div>
+        </section>
+    </main>
+</body>
+
+{% endblock body %}

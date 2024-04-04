@@ -1,0 +1,16 @@
+{% load static %}
+
+<script src="{% static 'modals_messages.js' %}" defer></script>
+
+<div id="modal_no_matches" class="modal modal_no_matches">
+    <div class="modal-content">
+        <p class="english_font_size white_letter">No matches found</p>
+        <p class="spanish_font_size black_letter">(No se encontraron coincidencias)</p>
+        <div class="div-botones">
+            <a href={% url 'library' %} id="accept_button" class="button">
+                <p class="english_title_font_size">Accept</p>
+                <p class="spanish_title_font_size">(Aceptar)</p>
+            </a>
+        </div>
+    </div>
+</div>

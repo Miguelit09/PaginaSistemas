@@ -13,12 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
     {% block script %}{% endblock script %}
 </head>
-<body>
-    {% block header %}{% endblock header %}
-    <main>
-            {% block content %}{% endblock content %}
-    </main>
 
+{% block body %}
+<body>
+    {% block header %}
+    {% endblock header %}
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
 </body>
+{% endblock body %}
+
 
 </html>
