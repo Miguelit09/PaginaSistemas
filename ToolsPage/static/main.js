@@ -54,11 +54,10 @@ for(let i=0; i<buttonsItem.length; i++){
                 document.getElementById('english_description').textContent = tool_data.english_description;
                 document.getElementById('spanish_name').textContent = tool_data.spanish_name;
                 document.getElementById('spanish_description').textContent = tool_data.spanish_description;
-                event.preventDefault(); // Detenemos el envío de la etiqueta a
                 modalItem.style.display = 'block';
             })
             .catch(error => console.error('Error al obtener detalles del item:', error));
-        
+        event.preventDefault();
     })
 }
 

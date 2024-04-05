@@ -142,7 +142,7 @@ body {
     background: rgb(255, 168, 110);
 }
 
-.section_library, .section_index, .section_seeker {
+.section_index {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -196,6 +196,10 @@ body {
 
 .library__card:hover {
     transform: scale(1.1);
+    background-color: rgb(130, 221, 248);
+}
+.library__card:active {
+    background-color: rgb(67, 211, 255);
 }
 
 /* Item */
@@ -234,12 +238,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     border: 3px solid var(--white);
     width: 30%;
     border-radius: 8px;
     padding: 16px;
-    height: 360px;
+    height: 380px;
 }
 
 .button {
@@ -414,6 +418,6 @@ input[type="radio"]:checked + .seeker__english-radio-button, input[type="radio"]
 }
 
 .modal__item {
-    margin: 1% auto;
+    margin: 0.2% auto;
     width: 90%;
 }
